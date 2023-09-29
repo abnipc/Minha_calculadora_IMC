@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               const SizedBox(
-                height: 50,
+                height: 10,
               ),
               Row(
                 children: [
@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                         print("teste");
                       },
                       icon: const Icon(Icons.numbers),
-                      label: const Text("CALCULAR IMC")),
+                      label: const Text("CALCULAR")),
                   //###########################################################################
                   ElevatedButton.icon(
                       onPressed: () {
@@ -148,6 +148,22 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            label: 'Histórico',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Configurações',
+          ),
+        ],
       ),
     );
   }
