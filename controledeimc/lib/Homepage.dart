@@ -13,6 +13,8 @@ class _HomePageState extends State<HomePage> {
   String ImcString = "0";
   double imc = 0;
 
+  String savedData = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,7 +114,8 @@ class _HomePageState extends State<HomePage> {
               ),
               Text(
                 ImcString,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               const SizedBox(
                 height: 10,
@@ -135,16 +138,20 @@ class _HomePageState extends State<HomePage> {
                   //###########################################################################
                   ElevatedButton.icon(
                       onPressed: () {
-                        //imc = double.parse(peso) /
-                        //(double.parse(altura) * double.parse(altura));
-                        //imc_string = imc.toString();
-                        print("teste");
+                        //REDIRECIONANDO
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => const HomePage(),
+                          ),
+                        );
                       },
                       icon: const Icon(Icons.save),
                       label: const Text("SALVAR")),
                   //###########################################################################
                 ],
               ),
+              //Text('Dados Salvos: $savedData')
             ],
           ),
         ),
